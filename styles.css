@@ -1,0 +1,40 @@
+body{
+    background-color: hsl(185, 41%, 84%);
+    font-family: "Space Mono", sans-serif;
+}
+
+input{
+    text-align: right;
+    font-family: "Space Mono", sans-serif;
+}
+
+button{
+    font-family: "Space Mono", sans-serif;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card{
+    background-color: white;
+}
+
+.totals{
+    background-color: hsl(183, 100%, 15%);
+}
+
+#bill{
+    background-image: url(./images/icon-dollar.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+#people{
+    background-image: url(./images/icon-person.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+}

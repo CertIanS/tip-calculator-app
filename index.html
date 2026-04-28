@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link href="./styles.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <!--<label for="bill">Bill</label>-->
+      <p>Bill</p>
+      <input id="bill" type="number" step="0.01" min="0" placeholder="0"/>
+      <p>Select Tip %</p>
+      <button>5%</button>
+      <button>10%</button>
+      <button>15%</button>
+      <button>20%</button>
+      <button>25%</button>
+      <button>Custom</button>
+      <!--<label for="people">Number of People</label>-->
+      <p>Number of People</p>
+      <input id="people" type="number" min="0" placeholder="0"/>
+      <div class="totals">
+        <p>Tip Amount</p>
+        <p>/ person</p>
+        <p>Total</p>
+        <p>/ person</p>
+        <button>Reset</button>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
