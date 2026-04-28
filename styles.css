@@ -1,26 +1,47 @@
 body{
     background-color: hsl(185, 41%, 84%);
     font-family: "Space Mono", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+}
+
+img{
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
 }
 
 input{
     text-align: right;
     font-family: "Space Mono", sans-serif;
+    border: none;
 }
 
 button{
     font-family: "Space Mono", sans-serif;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    border: none;
 }
 
-.container{
+button:hover:enabled{
+    cursor: pointer;
+}
+
+/*.container{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
-}
+}*/
 
 .card{
     background-color: white;
+    border-radius: 10px;
 }
 
 .totals{
@@ -37,4 +58,27 @@ button{
     background-image: url(./images/icon-person.svg);
     background-position: left center;
     background-repeat: no-repeat;
+}
+
+#custom, input{
+    background-color: hsl(189, 47%, 97%);
+    color: hsl(183, 100%, 15%);
+}
+
+#reset:disabled{
+    background-color: hsl(186, 14%, 43%);
+    color: hsl(183, 100%, 15%);
+}
+
+@media (min-width: 70em){
+    body{
+        height: 70vh;
+    }
+    .card{
+        display: flex;
+    }
+
+    .totals{
+        margin: 5px;
+    }
 }
