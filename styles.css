@@ -11,10 +11,12 @@ body{
 p{
     color: hsl(186, 14%, 43%);
     text-align: left;
+    font-size: 15px;
 }
 
 span{
     color: hsl(172, 67%, 45%);
+    font-size: 25px;
 }
 
 img{
@@ -53,7 +55,7 @@ button:hover:enabled{
 .card{
     background-color: white;
     border-radius: 10px;
-    width: 250px;
+    width: 300px;
     padding: 10px;
 }
 
@@ -62,7 +64,9 @@ button:hover:enabled{
 }
 
 .input button{
-    width: 100px;
+    width: 120px;
+    font-size: 20px;
+    margin: 1px;
 }
 
 .totals{
@@ -118,11 +122,13 @@ button:hover:enabled{
     }
     .card{
         display: flex;
-        width: 100%;
+        width: 80%;
     }
-
+    .input button{
+        width: 90px;
+    }
     .totals{
         margin: 5px;
-        width: 100%;
+        width: 85%;
     }
 }
