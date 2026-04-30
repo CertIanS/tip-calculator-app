@@ -8,7 +8,7 @@ body{
     height: 85vh;
 }
 
-p{
+p, label{
     color: hsl(184, 14%, 56%);
     text-align: left;
     font-size: 15px;
@@ -33,6 +33,7 @@ input{
     font-weight: 700;
     border: none;
     color: hsl(183, 100%, 15%);
+    background-color: hsl(189, 47%, 97%);
     width: 100%;
 }
 
@@ -73,11 +74,6 @@ button:hover:enabled{
     padding: 10px;
 }
 
-.input button{
-    width: 120px;
-    margin: 1px;
-}
-
 .totals{
     background-color: hsl(183, 100%, 15%);
     border-radius: 10px;
@@ -97,9 +93,8 @@ button:hover:enabled{
     background-repeat: no-repeat;
 }
 
-#custom, input{
-    background-color: hsl(189, 47%, 97%);
-    color: hsl(183, 100%, 15%);
+#custom{
+    width: 117px;
 }
 
 #tipTitle, #totalTitle{
@@ -109,6 +104,27 @@ button:hover:enabled{
 #tipAmountNumber, #totalAmountNumber{
     text-align: center;
     align-content: center;
+}
+
+#five, #ten, #fifteen, #twentyFive, #fifty{
+    font-family: "Space Mono", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+#five, #ten, #fifteen, #twentyFive, #fifty{
+    width: 120px;
+    margin: 1px;
+}
+
+#five:hover, #ten:hover, #fifteen:hover, #twentyFive:hover, #fifty:hover{
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
 }
 
 #reset{
@@ -138,14 +154,17 @@ button:hover:enabled{
         display: flex;
         width: 80%;
     }
-    .input button{
-        width: 90px;
-    }
     .totals{
         padding: 15px;
         margin: 5px;
         width: 85%;
         grid-template-rows: auto auto 70px auto;
+    }
+    #five, #ten, #fifteen, #twentyFive, #fifty{
+        width: 90px;
+    }
+    #custom{
+        width: 87px;
     }
     #tipAmountTitle, #totalAmountTitle{
         line-height: 0.5;
@@ -155,6 +174,9 @@ button:hover:enabled{
         align-content: flex-start;
     }
     #reset{
+        font-family: "Space Mono", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
         grid-row-start: 4;
         grid-row-end: 5;
     }

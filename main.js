@@ -28,56 +28,56 @@ function calculateTip(id){
             tip = bill * 0.05;
             document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twenty").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
+            document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("ten").style.color = "white";
             document.getElementById("fifteen").style.color = "white";
-            document.getElementById("twenty").style.color = "white";
             document.getElementById("twentyFive").style.color = "white";
+            document.getElementById("fifty").style.color = "white";
             break;
         case "ten":
             tip = bill * 0.1;
             document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twenty").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
+            document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("five").style.color = "white";
             document.getElementById("fifteen").style.color = "white";
-            document.getElementById("twenty").style.color = "white";
             document.getElementById("twentyFive").style.color = "white";
+            document.getElementById("fifty").style.color = "white";
             break;
         case "fifteen":
             tip = bill * 0.15;
             document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twenty").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
+            document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("five").style.color = "white";
             document.getElementById("ten").style.color = "white";
-            document.getElementById("twenty").style.color = "white";
             document.getElementById("twentyFive").style.color = "white";
-            break;
-        case "twenty":
-            tip = bill * 0.2;
-            document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("five").style.color = "white";
-            document.getElementById("ten").style.color = "white";
-            document.getElementById("fifteen").style.color = "white";
-            document.getElementById("twentyFive").style.color = "white";
+            document.getElementById("fifty").style.color = "white";
             break;
         case "twentyFive":
             tip = bill * 0.25;
             document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twenty").style.backgroundColor = "hsl(183, 100%, 15%)";
+            document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
             document.getElementById("five").style.color = "white";
             document.getElementById("ten").style.color = "white";
             document.getElementById("fifteen").style.color = "white";
-            document.getElementById("twenty").style.color = "white";
+            document.getElementById("fifty").style.color = "white";
+            break;
+        case "fifty":
+            tip = bill * 0.5;
+            document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
+            document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
+            document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
+            document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
+            document.getElementById("five").style.color = "white";
+            document.getElementById("ten").style.color = "white";
+            document.getElementById("fifteen").style.color = "white";
+            document.getElementById("twentyFive").style.color = "white";
     }
     if(people > 0 && bill > 0.0){
         document.getElementById("tip").textContent = (tip / people).toFixed(2);
@@ -91,13 +91,13 @@ function reset(){
     document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
     document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
     document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-    document.getElementById("twenty").style.backgroundColor = "hsl(183, 100%, 15%)";
     document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
+    document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
     document.getElementById("five").style.color = "white";
     document.getElementById("ten").style.color = "white";
     document.getElementById("fifteen").style.color = "white";
-    document.getElementById("twenty").style.color = "white";
     document.getElementById("twentyFive").style.color = "white";
+    document.getElementById("fifty").style.color = "white";
     document.getElementById("people").value = "";
     document.getElementById("bill").value = "";
     bill, tip = 0.0;

@@ -16,21 +16,20 @@
   <img src="./images/logo.svg" alt="splitter"/>
   <div class="container">
     <div class="card">
-      <!--<label for="bill">Bill</label>-->
-      <div class="input">
-        <p>Bill</p>
-        <input id="bill" type="number" step="0.01" min="0" placeholder="0"/>
+      <form class="input">
+        <label for="bill">Bill</label>
+        <input id="bill" type="number" name="bill" step="0.01" min="0" placeholder="0"/>
         <p>Select Tip %</p>
-        <button id="five" onclick="calculateTip(this.id)">5%</button>
-        <button id="ten" onclick="calculateTip(this.id)">10%</button>
-        <button id="fifteen" onclick="calculateTip(this.id)">15%</button>
-        <button id="twenty" onclick="calculateTip(this.id)">20%</button>
-        <button id="twentyFive" onclick="calculateTip(this.id)">25%</button>
-        <button id="custom" disabled>Custom</button>
-        <!--<label for="people">Number of People</label>-->
-        <p>Number of People</p>
-        <input id="people" type="number" min="0" placeholder="0"/>
-      </div>
+        <input type="button" value="5%" id="five" onclick="calculateTip(this.id)"></input>
+        <input type="button" value="10%" id="ten" onclick="calculateTip(this.id)"></input>
+        <input type="button" value="15%" id="fifteen" onclick="calculateTip(this.id)"></input>
+        <input type="button" value="25%" id="twentyFive" onclick="calculateTip(this.id)"></input>
+        <input type="button" value="50%" id="fifty" onclick="calculateTip(this.id)"></input>
+        <input type="text" id="custom" name="custom" placeholder="Custom"></input>
+        <br><br>
+        <label for="people">Number of People</label>
+        <input id="people" type="number" name="people" min="0" placeholder="0"/>
+      </form>
       
       <div class="totals">
         <!--<p id="tipTitle">Tip Amount</p>
