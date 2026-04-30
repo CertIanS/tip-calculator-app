@@ -12,11 +12,13 @@ p{
     color: hsl(186, 14%, 43%);
     text-align: left;
     font-size: 15px;
+    font-weight: 700;
 }
 
 span{
     color: hsl(172, 67%, 45%);
     font-size: 25px;
+    font-weight: 700;
 }
 
 img{
@@ -28,12 +30,16 @@ img{
 input{
     text-align: right;
     font-family: "Space Mono", sans-serif;
+    font-weight: 700;
     border: none;
     color: hsl(183, 100%, 15%);
+    width: 100%;
 }
 
 button{
     font-family: "Space Mono", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
     background-color: hsl(183, 100%, 15%);
     color: white;
     border: none;
@@ -65,7 +71,6 @@ button:hover:enabled{
 
 .input button{
     width: 120px;
-    font-size: 20px;
     margin: 1px;
 }
 
@@ -95,6 +100,11 @@ button:hover:enabled{
 
 #tipTitle, #totalTitle{
     color: hsl(189, 47%, 97%);
+}
+
+#tipAmountNumber, #totalAmountNumber{
+    text-align: center;
+    align-content: center;
 }
 
 #reset{
@@ -128,7 +138,20 @@ button:hover:enabled{
         width: 90px;
     }
     .totals{
+        padding: 15px;
         margin: 5px;
         width: 85%;
+        grid-template-rows: auto auto 70px auto;
+    }
+    #tipAmountTitle, #totalAmountTitle{
+        line-height: 0.5;
+    }
+    #tipAmountNumber, #totalAmountNumber{
+        padding-top: 10px;
+        align-content: flex-start;
+    }
+    #reset{
+        grid-row-start: 4;
+        grid-row-end: 5;
     }
 }
