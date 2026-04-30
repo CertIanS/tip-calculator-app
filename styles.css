@@ -9,7 +9,7 @@ body{
 }
 
 p{
-    color: hsl(186, 14%, 43%);
+    color: hsl(184, 14%, 56%);
     text-align: left;
     font-size: 15px;
     font-weight: 700;
@@ -34,6 +34,10 @@ input{
     border: none;
     color: hsl(183, 100%, 15%);
     width: 100%;
+}
+
+input::placeholder{
+    color: hsl(184, 14%, 56%);
 }
 
 button{

@@ -92,8 +92,8 @@ function reset(){
     document.getElementById("fifteen").style.color = "white";
     document.getElementById("twenty").style.color = "white";
     document.getElementById("twentyFive").style.color = "white";
-    document.getElementById("people").value = 0;
-    document.getElementById("bill").value = 0.0
+    document.getElementById("people").value = "";
+    document.getElementById("bill").value = "";
     bill, tip = 0.0;
     people = 0;
     document.getElementById("total").textContent = "0.00";
