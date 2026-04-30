@@ -10,8 +10,12 @@ function calculate(){
     bill = document.getElementById("bill").value;
     people = document.getElementById("people").value;
 
-    if(people > 0){
+    if(people > 0 && bill > 0.0){
         document.getElementById("total").textContent = (bill / people).toFixed(2);
+        document.getElementById("tip").textContent = (tip / people).toFixed(2);
+    }else{
+        document.getElementById("total").textContent = "0.00";
+        document.getElementById("tip").textContent = "0.00";
     }
 }
 
@@ -77,6 +81,8 @@ function calculateTip(id){
     }
     if(people > 0 && bill > 0.0){
         document.getElementById("tip").textContent = (tip / people).toFixed(2);
+    }else{
+        document.getElementById("tip").textContent = "0.00";
     }
 }
 
