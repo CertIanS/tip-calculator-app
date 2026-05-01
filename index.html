@@ -25,7 +25,7 @@
         <input type="button" value="15%" id="fifteen" onclick="calculateTip(this.id)" ></input>
         <input type="button" value="25%" id="twentyFive" onclick="calculateTip(this.id)"></input>
         <input type="button" value="50%" id="fifty" onclick="calculateTip(this.id)"></input>
-        <input type="text" id="custom" name="custom" placeholder="Custom"></input>
+        <input type="text" id="custom" name="custom" placeholder="Custom" onchange="validateCustomTip()"></input>
         <br><br>
         <label for="people">Number of People</label><span id="peopleError"></span>
         <input id="people" type="number" name="people" min="1" placeholder="0" onchange="validateInput(this.id)" required/>

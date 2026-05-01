@@ -103,6 +103,30 @@ function validateInput(id){
     }
 }
 
+function validateCustomTip(){
+    if(!isNaN(document.getElementById("custom").value) && document.getElementById("custom").value > 0){
+        tip = bill * (document.getElementById("custom").value / 100.00);
+        document.getElementById("tip").textContent = (tip / people).toFixed(2);
+        document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
+        document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
+        document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
+        document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
+        document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
+        document.getElementById("five").style.color = "white";
+        document.getElementById("ten").style.color = "white";
+        document.getElementById("fifteen").style.color = "white";
+        document.getElementById("twentyFive").style.color = "white";
+        document.getElementById("fifty").style.color = "white";
+        document.getElementById("custom").style.border = "3px solid green";
+    }else if(document.getElementById("custom").value === ""){
+        document.getElementById("custom").style.border = "3px solid white";
+        document.getElementById("tip").textContent = "0.00";
+    }
+    else{
+        document.getElementById("custom").style.border = "3px solid orange";
+    }
+}
+
 function reset(){
     document.getElementById("reset").disabled = true;
     document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
@@ -117,8 +141,10 @@ function reset(){
     document.getElementById("fifty").style.color = "white";
     document.getElementById("bill").style.border = "3px solid white";
     document.getElementById("people").style.border = "3px solid white";
+    document.getElementById("custom").style.border = "3px solid white";
     document.getElementById("bill").value = "";
     document.getElementById("people").value = "";
+    document.getElementById("custom").value = "";
     bill, tip = 0.0;
     people = 0;
     document.getElementById("total").textContent = "0.00";
