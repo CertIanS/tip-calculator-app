@@ -51,7 +51,7 @@ button{
     border-radius: 3px;
 }
 
-button:hover:enabled{
+button:hover:enabled, input:hover{
     cursor: pointer;
 }
 
@@ -85,12 +85,27 @@ button:hover:enabled{
     background-image: url(./images/icon-dollar.svg);
     background-position: left center;
     background-repeat: no-repeat;
+    border-radius: 3px;
+    padding: 5px;
+    border: 3px solid white;
 }
 
 #people{
     background-image: url(./images/icon-person.svg);
     background-position: left center;
     background-repeat: no-repeat;
+    border-radius: 3px;
+    padding: 5px;
+    border: 3px solid white;
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    appearance: textfield;
 }
 
 #custom{
@@ -127,6 +142,13 @@ button:hover:enabled{
     cursor: pointer;
 }
 
+#billError, #peopleError{
+    font-size: 14px;
+    font-weight: 700;
+    float: right;
+    color: orange;
+}
+
 #reset{
     grid-column-start: 1;
     grid-column-end: 3;
@@ -156,7 +178,7 @@ button:hover:enabled{
     }
     .totals{
         padding: 15px;
-        margin: 5px;
+        margin: 10px;
         width: 85%;
         grid-template-rows: auto auto 70px auto;
     }

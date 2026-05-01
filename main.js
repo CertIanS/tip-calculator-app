@@ -2,8 +2,8 @@ let bill = 0.0;
 let people = 0;
 let tip = 0.0;
 
-document.getElementById("bill").addEventListener("change", calculate);
-document.getElementById("people").addEventListener("change", calculate);
+//document.getElementById("bill").addEventListener("change", validateInput("bill"));
+//document.getElementById("people").addEventListener("change", validateInput("people"));
 
 function calculate(){
     document.getElementById("reset").disabled = false;
@@ -20,7 +20,7 @@ function calculate(){
 }
 
 function calculateTip(id){
-    document.getElementById("reset").disabled = false;
+    //document.getElementById("reset").disabled = false;
     document.getElementById(id).style.backgroundColor = "hsl(172, 67%, 45%)";
     document.getElementById(id).style.color = "hsl(183, 100%, 15%)";
     switch(id) {
@@ -86,6 +86,23 @@ function calculateTip(id){
     }
 }
 
+function validateInput(id){
+    if (id === "bill" && document.getElementById(id).value < 0.01){
+        console.log("error: bill can't be 0");
+        document.getElementById("billError").textContent = "Can't be zero";
+        document.getElementById(id).style.border = "3px solid orange";
+    }else if(id === "people" && document.getElementById(id).value < 1){
+        console.log("error: people can't be 0");
+        document.getElementById("peopleError").textContent = "Can't be zero";
+        document.getElementById(id).style.border = "3px solid orange";
+    }else{
+        document.getElementById("reset").disabled = false;
+        document.getElementById(id + "Error").textContent = "";
+        document.getElementById(id).style.border = "3px solid lightgreen";
+        calculate();
+    }
+}
+
 function reset(){
     document.getElementById("reset").disabled = true;
     document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
@@ -98,8 +115,10 @@ function reset(){
     document.getElementById("fifteen").style.color = "white";
     document.getElementById("twentyFive").style.color = "white";
     document.getElementById("fifty").style.color = "white";
-    document.getElementById("people").value = "";
+    document.getElementById("bill").style.border = "3px solid white";
+    document.getElementById("people").style.border = "3px solid white";
     document.getElementById("bill").value = "";
+    document.getElementById("people").value = "";
     bill, tip = 0.0;
     people = 0;
     document.getElementById("total").textContent = "0.00";
