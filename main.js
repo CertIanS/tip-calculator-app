@@ -117,7 +117,7 @@ function validateCustomTip(){
         document.getElementById("fifteen").style.color = "white";
         document.getElementById("twentyFive").style.color = "white";
         document.getElementById("fifty").style.color = "white";
-        document.getElementById("custom").style.border = "3px solid green";
+        document.getElementById("custom").style.border = "3px solid lightgreen";
     }else if(document.getElementById("custom").value === ""){
         document.getElementById("custom").style.border = "3px solid white";
         document.getElementById("tip").textContent = "0.00";
