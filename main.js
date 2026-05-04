@@ -2,9 +2,6 @@ let bill = 0.0;
 let people = 0;
 let tip = 0.0;
 
-//document.getElementById("bill").addEventListener("change", validateInput("bill"));
-//document.getElementById("people").addEventListener("change", validateInput("people"));
-
 function calculate(){
     document.getElementById("reset").disabled = false;
     bill = document.getElementById("bill").value;
@@ -88,11 +85,9 @@ function calculateTip(id){
 
 function validateInput(id){
     if (id === "bill" && document.getElementById(id).value < 0.01){
-        console.log("error: bill can't be 0");
         document.getElementById("billError").textContent = "Can't be zero";
         document.getElementById(id).style.border = "3px solid orange";
     }else if(id === "people" && document.getElementById(id).value < 1){
-        console.log("error: people can't be 0");
         document.getElementById("peopleError").textContent = "Can't be zero";
         document.getElementById(id).style.border = "3px solid orange";
     }else{

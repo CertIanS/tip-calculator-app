@@ -5,14 +5,15 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 85vh;
+    height: 95vh;
 }
 
 p, label{
     color: hsl(184, 14%, 56%);
     text-align: left;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 700;
+    padding-left: 3px;
 }
 
 span{
@@ -24,12 +25,13 @@ span{
 img{
     display: block;
     margin: auto;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
 }
 
 input{
     text-align: right;
     font-family: "Space Mono", sans-serif;
+    font-size: 15px;
     font-weight: 700;
     border: none;
     color: hsl(183, 100%, 15%);
@@ -54,6 +56,7 @@ button{
     font-family: "Space Mono", sans-serif;
     font-weight: 700;
     font-size: 15px;
+    text-align: center;
     background-color: hsl(183, 100%, 15%);
     color: white;
     border: none;
@@ -64,22 +67,18 @@ button:hover:enabled, input:hover{
     cursor: pointer;
 }
 
-/*.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-}*/
-
 .card{
     background-color: white;
-    border-radius: 10px;
-    width: 300px;
-    padding: 10px;
+    border-radius: 15px;
+    width: 280px;
+    padding: 20px;
 }
 
-.input, .totals{
+.input{
+    padding: 10px 15px 10px 5px;
+}
+
+.totals{
     padding: 10px;
 }
 
@@ -93,6 +92,7 @@ button:hover:enabled, input:hover{
 #bill{
     background-image: url(./images/icon-dollar.svg);
     background-position: left center;
+    background-position-x: 10px;
     background-repeat: no-repeat;
     border-radius: 3px;
     padding: 5px;
@@ -102,14 +102,10 @@ button:hover:enabled, input:hover{
 #people{
     background-image: url(./images/icon-person.svg);
     background-position: left center;
+    background-position-x: 10px;
     background-repeat: no-repeat;
     border-radius: 3px;
     padding: 5px;
-    border: 3px solid white;
-}
-
-#custom{
-    width: 117px;
     border: 3px solid white;
 }
 
@@ -126,15 +122,20 @@ button:hover:enabled, input:hover{
     font-family: "Space Mono", sans-serif;
     font-weight: 700;
     font-size: 15px;
+    text-align: center;
     background-color: hsl(183, 100%, 15%);
     color: white;
     border: none;
     border-radius: 3px;
+    width: 115px;
+    margin: 5px;
+    padding: 5px;
 }
 
-#five, #ten, #fifteen, #twentyFive, #fifty{
-    width: 120px;
-    margin: 1px;
+#custom{
+    width: 105px;
+    padding: 5px;
+    border: 3px solid white;
 }
 
 #five:hover, #ten:hover, #fifteen:hover, #twentyFive:hover, #fifty:hover{
@@ -143,16 +144,23 @@ button:hover:enabled, input:hover{
     cursor: pointer;
 }
 
+#labels{
+    display: flex;
+}
+
 #billError, #peopleError{
-    font-size: 14px;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 12px;
     font-weight: 700;
-    float: right;
     color: orange;
 }
 
 #reset{
     grid-column-start: 1;
     grid-column-end: 3;
+    padding: 9px;
+    margin-top: 20px;
 }
 
 #reset:enabled{
@@ -163,6 +171,15 @@ button:hover:enabled, input:hover{
 #reset:disabled{
     background-color: hsl(186, 14%, 43%);
     color: hsl(183, 100%, 15%);
+}
+
+@media(max-width: 70em){
+    span p{
+        margin: 0;
+    }
+    #tipAmountTitle, #totalAmountTitle{
+        padding: 10px 0 10px 0;
+    }
 }
 
 @media (min-width: 70em){
