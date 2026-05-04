@@ -9,7 +9,7 @@ body{
 }
 
 p, label{
-    color: hsl(184, 14%, 56%);
+    color: hsl(186, 14%, 43%);
     text-align: left;
     font-size: 12px;
     font-weight: 700;
@@ -22,21 +22,15 @@ span{
     font-weight: 700;
 }
 
-img{
-    display: block;
-    margin: auto;
-    margin-bottom: 30px;
-}
-
 input{
     text-align: right;
     font-family: "Space Mono", sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
     border: none;
     color: hsl(183, 100%, 15%);
     background-color: hsl(189, 47%, 97%);
-    width: 100%;
+    width: 95%;
 }
 
 input::placeholder{
@@ -55,7 +49,6 @@ input[type=number]{
 button{
     font-family: "Space Mono", sans-serif;
     font-weight: 700;
-    font-size: 15px;
     text-align: center;
     background-color: hsl(183, 100%, 15%);
     color: white;
@@ -121,7 +114,7 @@ button:hover:enabled, input:hover{
 #five, #ten, #fifteen, #twentyFive, #fifty{
     font-family: "Space Mono", sans-serif;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     background-color: hsl(183, 100%, 15%);
     color: white;
@@ -136,6 +129,11 @@ button:hover:enabled, input:hover{
     width: 105px;
     padding: 5px;
     border: 3px solid white;
+    text-align: center;
+}
+
+#custom::placeholder{
+    color: hsl(186, 14%, 43%);
 }
 
 #five:hover, #ten:hover, #fifteen:hover, #twentyFive:hover, #fifty:hover{
@@ -174,6 +172,11 @@ button:hover:enabled, input:hover{
 }
 
 @media(max-width: 70em){
+    img{
+        display: block;
+        margin: auto;
+        margin-bottom: 30px;
+    }
     span p{
         margin: 0;
     }
@@ -184,7 +187,13 @@ button:hover:enabled, input:hover{
 
 @media (min-width: 70em){
     body{
-        height: 70vh;
+        height: 90vh;
+    }
+    img{
+        margin-top: 0;
+    }
+    input{
+        margin-top: 5px;
     }
     .container{
         display: flex;
@@ -192,26 +201,43 @@ button:hover:enabled, input:hover{
     }
     .card{
         display: flex;
+        margin-top: 5em;
         width: 80%;
     }
+    .input{
+        padding-top: 20px;
+    }
     .totals{
-        padding: 15px;
+        padding: 30px;
         margin: 10px;
-        width: 85%;
+        width: 75%;
         grid-template-rows: auto auto 70px auto;
     }
+    #bill{
+        margin-bottom: 10px;
+    }
     #five, #ten, #fifteen, #twentyFive, #fifty{
-        width: 90px;
+        width: 100px;
+        margin: 0;
+        margin-bottom: 10px;
+        
     }
     #custom{
         width: 87px;
     }
+    
     #tipAmountTitle, #totalAmountTitle{
         line-height: 0.5;
+        padding: 20px 0 5px 0;
     }
     #tipAmountNumber, #totalAmountNumber{
-        padding-top: 10px;
+        padding-top: 20px;
+        text-align: right;
+        padding-right: 5px;
         align-content: flex-start;
+    }
+    #tipAmountNumber span, #totalAmountNumber span{
+        font-size: 30px;
     }
     #reset{
         font-family: "Space Mono", sans-serif;
