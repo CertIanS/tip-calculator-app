@@ -8,76 +8,62 @@ function calculate(){
     people = document.getElementById("people").value;
 
     if(people > 0 && bill > 0.0){
-        document.getElementById("total").textContent = (bill / people).toFixed(2);
         document.getElementById("tip").textContent = (tip / people).toFixed(2);
+        document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
     }else{
-        document.getElementById("total").textContent = "0.00";
         document.getElementById("tip").textContent = "0.00";
+        document.getElementById("total").textContent = "0.00";
     }
 }
 
 function calculateTip(id){
-    document.getElementById(id).style.backgroundColor = "hsl(172, 67%, 45%)";
-    document.getElementById(id).style.color = "hsl(183, 100%, 15%)";
+    document.getElementById("reset").disabled = false;
     document.getElementById("custom").value = "";
+    document.getElementById("custom").style.border = "3px solid white";
     switch(id) {
         case "five":
             tip = bill * 0.05;
-            document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("ten").style.color = "white";
-            document.getElementById("fifteen").style.color = "white";
-            document.getElementById("twentyFive").style.color = "white";
-            document.getElementById("fifty").style.color = "white";
+            document.getElementById("five").disabled = true;
+            document.getElementById("ten").disabled = false;
+            document.getElementById("fifteen").disabled = false;
+            document.getElementById("twentyFive").disabled = false;
+            document.getElementById("fifty").disabled = false;
             break;
         case "ten":
             tip = bill * 0.1;
-            document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("five").style.color = "white";
-            document.getElementById("fifteen").style.color = "white";
-            document.getElementById("twentyFive").style.color = "white";
-            document.getElementById("fifty").style.color = "white";
+            document.getElementById("five").disabled = false;
+            document.getElementById("ten").disabled = true;
+            document.getElementById("fifteen").disabled = false;
+            document.getElementById("twentyFive").disabled = false;
+            document.getElementById("fifty").disabled = false;
             break;
         case "fifteen":
             tip = bill * 0.15;
-            document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("five").style.color = "white";
-            document.getElementById("ten").style.color = "white";
-            document.getElementById("twentyFive").style.color = "white";
-            document.getElementById("fifty").style.color = "white";
+            document.getElementById("five").disabled = false;
+            document.getElementById("ten").disabled = false;
+            document.getElementById("fifteen").disabled = true;
+            document.getElementById("twentyFive").disabled = false;
+            document.getElementById("fifty").disabled = false;
             break;
         case "twentyFive":
             tip = bill * 0.25;
-            document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("five").style.color = "white";
-            document.getElementById("ten").style.color = "white";
-            document.getElementById("fifteen").style.color = "white";
-            document.getElementById("fifty").style.color = "white";
+            document.getElementById("five").disabled = false;
+            document.getElementById("ten").disabled = false;
+            document.getElementById("fifteen").disabled = false;
+            document.getElementById("twentyFive").disabled = true;
+            document.getElementById("fifty").disabled = false;
             break;
         case "fifty":
             tip = bill * 0.5;
-            document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
-            document.getElementById("five").style.color = "white";
-            document.getElementById("ten").style.color = "white";
-            document.getElementById("fifteen").style.color = "white";
-            document.getElementById("twentyFive").style.color = "white";
+            document.getElementById("five").disabled = false;
+            document.getElementById("ten").disabled = false;
+            document.getElementById("fifteen").disabled = false;
+            document.getElementById("twentyFive").disabled = false;
+            document.getElementById("fifty").disabled = true;
     }
     if(people > 0 && bill > 0.0){
         document.getElementById("tip").textContent = (tip / people).toFixed(2);
+        document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
     }else{
         document.getElementById("tip").textContent = "0.00";
     }
@@ -99,23 +85,24 @@ function validateInput(id){
 }
 
 function validateCustomTip(){
+    document.getElementById("reset").disabled = false;
     if(!isNaN(document.getElementById("custom").value) && document.getElementById("custom").value > 0){
         if(bill > 0) tip = bill * (document.getElementById("custom").value / 100.00);
-        if(people > 0) document.getElementById("tip").textContent = (tip / people).toFixed(2);
-        document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-        document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-        document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-        document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
-        document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-        document.getElementById("five").style.color = "white";
-        document.getElementById("ten").style.color = "white";
-        document.getElementById("fifteen").style.color = "white";
-        document.getElementById("twentyFive").style.color = "white";
-        document.getElementById("fifty").style.color = "white";
+        if(people > 0){
+            document.getElementById("tip").textContent = (tip / people).toFixed(2);
+            document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
+        }
+        document.getElementById("five").disabled = false;
+        document.getElementById("ten").disabled = false;
+        document.getElementById("fifteen").disabled = false;
+        document.getElementById("twentyFive").disabled = false;
+        document.getElementById("fifty").disabled = false;
         document.getElementById("custom").style.border = "3px solid lightgreen";
     }else if(document.getElementById("custom").value === ""){
+        tip = 0.0;
         document.getElementById("custom").style.border = "3px solid white";
-        if(tip === 0.0) document.getElementById("tip").textContent = "0.00";
+        document.getElementById("tip").textContent = "0.00";
+        if(bill === 0.0 && people === 0) document.getElementById("reset").disabled = true;
     }else{
         document.getElementById("custom").style.border = "3px solid orange";
     }
@@ -123,16 +110,11 @@ function validateCustomTip(){
 
 function reset(){
     document.getElementById("reset").disabled = true;
-    document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
-    document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
-    document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
-    document.getElementById("twentyFive").style.backgroundColor = "hsl(183, 100%, 15%)";
-    document.getElementById("fifty").style.backgroundColor = "hsl(183, 100%, 15%)";
-    document.getElementById("five").style.color = "white";
-    document.getElementById("ten").style.color = "white";
-    document.getElementById("fifteen").style.color = "white";
-    document.getElementById("twentyFive").style.color = "white";
-    document.getElementById("fifty").style.color = "white";
+    document.getElementById("five").disabled = false;
+    document.getElementById("ten").disabled = false;
+    document.getElementById("fifteen").disabled = false;
+    document.getElementById("twentyFive").disabled = false;
+    document.getElementById("fifty").disabled = false;
     document.getElementById("bill").style.border = "3px solid white";
     document.getElementById("people").style.border = "3px solid white";
     document.getElementById("custom").style.border = "3px solid white";

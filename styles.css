@@ -104,13 +104,27 @@ button:hover:enabled, input:hover{
 
 #five, #ten, #fifteen, #twentyFive, #fifty{
     text-align: center;
-    background-color: hsl(183, 100%, 15%);
-    color: white;
     border: none;
     border-radius: 3px;
     width: 44%;
     margin: 5px;
     padding: 5px;
+}
+
+#five:enabled, #ten:enabled, #fifteen:enabled, #twentyFive:enabled, #fifty:enabled{
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+}
+
+#five:hover, #ten:hover, #fifteen:hover, #twentyFive:hover, #fifty:hover{
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+}
+
+#five:disabled, #ten:disabled, #fifteen:disabled, #twentyFive:disabled, #fifty:disabled{
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
 }
 
 #custom{
@@ -124,11 +138,7 @@ button:hover:enabled, input:hover{
     color: hsl(186, 14%, 43%);
 }
 
-#five:hover, #ten:hover, #fifteen:hover, #twentyFive:hover, #fifty:hover{
-    background-color: hsl(172, 67%, 45%);
-    color: hsl(183, 100%, 15%);
-    cursor: pointer;
-}
+
 
 #labels{
     display: flex;
