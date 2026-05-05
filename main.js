@@ -17,9 +17,9 @@ function calculate(){
 }
 
 function calculateTip(id){
-    //document.getElementById("reset").disabled = false;
     document.getElementById(id).style.backgroundColor = "hsl(172, 67%, 45%)";
     document.getElementById(id).style.color = "hsl(183, 100%, 15%)";
+    document.getElementById("custom").value = "";
     switch(id) {
         case "five":
             tip = bill * 0.05;
@@ -100,8 +100,8 @@ function validateInput(id){
 
 function validateCustomTip(){
     if(!isNaN(document.getElementById("custom").value) && document.getElementById("custom").value > 0){
-        tip = bill * (document.getElementById("custom").value / 100.00);
-        document.getElementById("tip").textContent = (tip / people).toFixed(2);
+        if(bill > 0) tip = bill * (document.getElementById("custom").value / 100.00);
+        if(people > 0) document.getElementById("tip").textContent = (tip / people).toFixed(2);
         document.getElementById("five").style.backgroundColor = "hsl(183, 100%, 15%)";
         document.getElementById("ten").style.backgroundColor = "hsl(183, 100%, 15%)";
         document.getElementById("fifteen").style.backgroundColor = "hsl(183, 100%, 15%)";
@@ -115,9 +115,8 @@ function validateCustomTip(){
         document.getElementById("custom").style.border = "3px solid lightgreen";
     }else if(document.getElementById("custom").value === ""){
         document.getElementById("custom").style.border = "3px solid white";
-        document.getElementById("tip").textContent = "0.00";
-    }
-    else{
+        if(tip === 0.0) document.getElementById("tip").textContent = "0.00";
+    }else{
         document.getElementById("custom").style.border = "3px solid orange";
     }
 }
