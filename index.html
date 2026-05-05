@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
@@ -16,7 +16,7 @@
   <img src="./images/logo.svg" alt="splitter"/>
   <div class="container">
     <div class="card">
-      <form class="input" onsubmit="return false;">
+      <form class="inputForm" onsubmit="return false;">
         <div id="labels"><label for="bill">Bill</label><span id="billError"></span></div>
         <input id="bill" type="number" name="bill" step="0.01" min="0.01" placeholder="0" onchange="validateInput(this.id)" required/>
         <p>Select Tip %</p>
@@ -32,23 +32,6 @@
       </form>
       
       <div class="totals">
-        <!--<p id="tipTitle">Tip Amount</p>
-        <p>/ person</p>
-        <span>$<span id="tip">0.00</span></span>
-        <p id="totalTitle">Total</p>
-        <p>/ person</p>
-        <span>$<span id="total">0.00</span></span><br>
-        <button id="reset" onclick="reset()" disabled>Reset</button>-->
-        <!--<div id="tip">
-          <span><p id="tipTitle">Tip Amount</p>
-          <p>/ person</p></span>
-          <span>$<span id="tip">0.00</span></span>
-        </div>
-        <div id="total">
-          <span><p id="totalTitle">Total</p>
-          <p>/ person</p></span>
-          <span>$<span id="total">0.00</span></span>
-        </div>-->
         <div id="tipAmountTitle">
           <span><p id="tipTitle">Tip Amount</p>
           <p>/ person</p></span>

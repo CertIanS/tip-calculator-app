@@ -57,7 +57,7 @@ button:hover:enabled, input:hover{
     padding: 20px;
 }
 
-.input{
+.inputForm{
     padding: 10px 15px 10px 5px;
 }
 
@@ -138,8 +138,6 @@ button:hover:enabled, input:hover{
     color: hsl(186, 14%, 43%);
 }
 
-
-
 #labels{
     display: flex;
 }
@@ -176,7 +174,6 @@ button:hover:enabled, input:hover{
     color: hsl(183, 100%, 15%);
 }
 
-
 @media(max-width: 70em){
     img{
         display: block;
@@ -207,7 +204,7 @@ button:hover:enabled, input:hover{
         margin-top: 5em;
         width: 80%;
     }
-    .input{
+    .inputForm{
         padding-top: 20px;
     }
     .totals{
