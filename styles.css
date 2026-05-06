@@ -41,7 +41,6 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
     appearance: none;
     margin: 0;
 }
-
 input[type=number]{
     appearance: textfield;
 }
@@ -117,12 +116,11 @@ button:hover:enabled, input:hover{
 }
 
 #five:hover, #ten:hover, #fifteen:hover, #twentyFive:hover, #fifty:hover{
-    background-color: hsl(172, 67%, 45%);
-    color: hsl(183, 100%, 15%);
     cursor: pointer;
 }
 
-#five:disabled, #ten:disabled, #fifteen:disabled, #twentyFive:disabled, #fifty:disabled{
+#five:disabled, #ten:disabled, #fifteen:disabled, #twentyFive:disabled, #fifty:disabled, 
+#five:hover, #ten:hover, #fifteen:hover, #twentyFive:hover, #fifty:hover{
     background-color: hsl(172, 67%, 45%);
     color: hsl(183, 100%, 15%);
 }
@@ -154,8 +152,6 @@ button:hover:enabled, input:hover{
     font-family: "Space Mono", sans-serif;
     font-weight: 700;
     text-align: center;
-    background-color: hsl(183, 100%, 15%);
-    color: white;
     border: none;
     border-radius: 3px;
     grid-column-start: 1;
@@ -238,8 +234,6 @@ button:hover:enabled, input:hover{
         font-size: 30px;
     }
     #reset{
-        font-family: "Space Mono", sans-serif;
-        font-weight: 700;
         font-size: 15px;
         grid-row-start: 4;
         grid-row-end: 5;

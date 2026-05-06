@@ -8,8 +8,7 @@ function calculate(){
     people = document.getElementById("people").value;
 
     if(people > 0 && bill > 0.0){
-        document.getElementById("tip").textContent = (tip / people).toFixed(2);
-        document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
+        updateTipandTotal();
     }else{
         document.getElementById("tip").textContent = "0.00";
         document.getElementById("total").textContent = "0.00";
@@ -62,8 +61,7 @@ function calculateTip(id){
             document.getElementById("fifty").disabled = true;
     }
     if(people > 0 && bill > 0.0){
-        document.getElementById("tip").textContent = (tip / people).toFixed(2);
-        document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
+        updateTipandTotal();
     }else{
         document.getElementById("tip").textContent = "0.00";
     }
@@ -89,8 +87,7 @@ function validateCustomTip(){
     if(!isNaN(document.getElementById("custom").value) && document.getElementById("custom").value > 0){
         if(bill > 0) tip = bill * (document.getElementById("custom").value / 100.00);
         if(people > 0){
-            document.getElementById("tip").textContent = (tip / people).toFixed(2);
-            document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
+            updateTipandTotal();
         }
         document.getElementById("five").disabled = false;
         document.getElementById("ten").disabled = false;
@@ -105,7 +102,13 @@ function validateCustomTip(){
         if(bill === 0.0 && people === 0) document.getElementById("reset").disabled = true;
     }else{
         document.getElementById("custom").style.border = "3px solid orange";
+        document.getElementById("tip").textContent = "0.00";
     }
+}
+
+function updateTipandTotal(){
+    document.getElementById("tip").textContent = (tip / people).toFixed(2);
+    document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
 }
 
 function reset(){
@@ -121,8 +124,8 @@ function reset(){
     document.getElementById("bill").value = "";
     document.getElementById("people").value = "";
     document.getElementById("custom").value = "";
-    bill, tip = 0.0;
-    people = 0;
     document.getElementById("total").textContent = "0.00";
     document.getElementById("tip").textContent = "0.00";
+    bill = tip = 0.0;
+    people = 0;
 }
