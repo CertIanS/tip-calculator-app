@@ -11,21 +11,21 @@ body{
 p, label{
     color: hsl(186, 14%, 43%);
     text-align: left;
-    font-size: 12px;
+    font-size: 0.75em;
     font-weight: 700;
     padding-left: 3px;
 }
 
 span{
     color: hsl(172, 67%, 45%);
-    font-size: 25px;
+    font-size: 1.5em;
     font-weight: 700;
 }
 
 input{
     text-align: right;
     font-family: "Space Mono", sans-serif;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 700;
     border: none;
     color: hsl(183, 100%, 15%);
@@ -102,6 +102,9 @@ button:hover:enabled, input:hover{
 }
 
 #five, #ten, #fifteen, #twentyFive, #fifty{
+    font-family: "Space Mono", sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
     text-align: center;
     border: none;
     border-radius: 3px;
@@ -136,14 +139,14 @@ button:hover:enabled, input:hover{
     color: hsl(186, 14%, 43%);
 }
 
-#labels{
+#labelBill, #labelPeople{
     display: flex;
 }
 
 #billError, #peopleError{
     margin-left: auto;
     margin-right: 0;
-    font-size: 12px;
+    font-size: 0.75em;
     font-weight: 700;
     color: orange;
 }
@@ -234,7 +237,7 @@ button:hover:enabled, input:hover{
         font-size: 30px;
     }
     #reset{
-        font-size: 15px;
+        font-size: 0.9375em;
         grid-row-start: 4;
         grid-row-end: 5;
     }

@@ -17,36 +17,36 @@
   <div class="container">
     <div class="card">
       <form class="inputForm" onsubmit="return false;">
-        <div id="labels"><label for="bill">Bill</label><span id="billError"></span></div>
+        <div id="labelBill"><label for="bill">Bill</label><span id="billError"></span></div>
         <input id="bill" type="number" name="bill" step="0.01" min="0.01" placeholder="0" onchange="validateInput(this.id)" required/>
         <p>Select Tip %</p>
-        <input type="button" value="5%" id="five" onclick="calculateTip(this.id)" ></input>
-        <input type="button" value="10%" id="ten" onclick="calculateTip(this.id)" ></input>
-        <input type="button" value="15%" id="fifteen" onclick="calculateTip(this.id)" ></input>
-        <input type="button" value="25%" id="twentyFive" onclick="calculateTip(this.id)"></input>
-        <input type="button" value="50%" id="fifty" onclick="calculateTip(this.id)"></input>
+        <button type="button" value="5%" id="five" onclick="calculateTip(this.id)">5%</button>
+        <button type="button" value="10%" id="ten" onclick="calculateTip(this.id)">10%</button>
+        <button type="button" value="15%" id="fifteen" onclick="calculateTip(this.id)">15%</button>
+        <button type="button" value="25%" id="twentyFive" onclick="calculateTip(this.id)">25%</button>
+        <button type="button" value="50%" id="fifty" onclick="calculateTip(this.id)">50%</button>
         <input type="text" id="custom" name="custom" placeholder="Custom" onchange="validateCustomTip()"></input>
         <br><br>
-        <div id="labels"><label for="people">Number of People</label><span id="peopleError"></span></div>
+        <div id="labelPeople"><label for="people">Number of People</label><span id="peopleError"></span></div>
         <input id="people" type="number" name="people" min="1" placeholder="0" onchange="validateInput(this.id)" required/>
       </form>
       
       <div class="totals">
         <div id="tipAmountTitle">
-          <span><p id="tipTitle">Tip Amount</p>
-          <p>/ person</p></span>
+          <p id="tipTitle">Tip Amount</p>
+          <p>/ person</p>
         </div>
         <div id="tipAmountNumber">
           <span>$<span id="tip">0.00</span></span>
         </div>
         <div id="totalAmountTitle">
-          <span><p id="totalTitle">Total</p>
-          <p>/ person</p></span>
+          <p id="totalTitle">Total</p>
+          <p>/ person</p>
         </div>
         <div id="totalAmountNumber">
           <span>$<span id="total">0.00</span></span>
         </div>
-        <button id="reset" onclick="reset()" disabled>RESET</button>
+        <button type="button" id="reset" onclick="reset()" disabled>RESET</button>
       </div>
     </div>
   </div>
