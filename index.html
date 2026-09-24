@@ -20,11 +20,11 @@
         <div id="labelBill"><label for="bill">Bill</label><span id="billError"></span></div>
         <input id="bill" type="number" name="bill" step="0.01" min="0.01" placeholder="0" onchange="validateInput(this.id)" required/>
         <p>Select Tip %</p>
-        <button type="button" value="5%" id="five" onclick="calculateTip(this.id)">5%</button>
-        <button type="button" value="10%" id="ten" onclick="calculateTip(this.id)">10%</button>
-        <button type="button" value="15%" id="fifteen" onclick="calculateTip(this.id)">15%</button>
-        <button type="button" value="25%" id="twentyFive" onclick="calculateTip(this.id)">25%</button>
-        <button type="button" value="50%" id="fifty" onclick="calculateTip(this.id)">50%</button>
+        <button type="submit" value="5%" id="five" onclick="calculateTip(this.id)">5%</button>
+        <button type="submit" value="10%" id="ten" onclick="calculateTip(this.id)">10%</button>
+        <button type="submit" value="15%" id="fifteen" onclick="calculateTip(this.id)">15%</button>
+        <button type="submit" value="25%" id="twentyFive" onclick="calculateTip(this.id)">25%</button>
+        <button type="submit" value="50%" id="fifty" onclick="calculateTip(this.id)">50%</button>
         <input type="text" id="custom" name="custom" placeholder="Custom" onchange="validateCustomTip()"></input>
         <br><br>
         <div id="labelPeople"><label for="people">Number of People</label><span id="peopleError"></span></div>

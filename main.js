@@ -1,6 +1,7 @@
 let bill = 0.0;
 let people = 0;
 let tip = 0.0;
+let tipPerc = 0.0;
 
 function calculate(){
     document.getElementById("reset").disabled = false;
@@ -22,6 +23,7 @@ function calculateTip(id){
     switch(id) {
         case "five":
             tip = bill * 0.05;
+            tipPerc = 0.05;
             document.getElementById("five").disabled = true;
             document.getElementById("ten").disabled = false;
             document.getElementById("fifteen").disabled = false;
@@ -30,6 +32,7 @@ function calculateTip(id){
             break;
         case "ten":
             tip = bill * 0.1;
+            tipPerc = 0.1;
             document.getElementById("five").disabled = false;
             document.getElementById("ten").disabled = true;
             document.getElementById("fifteen").disabled = false;
@@ -38,6 +41,7 @@ function calculateTip(id){
             break;
         case "fifteen":
             tip = bill * 0.15;
+            tipPerc = 0.15;
             document.getElementById("five").disabled = false;
             document.getElementById("ten").disabled = false;
             document.getElementById("fifteen").disabled = true;
@@ -46,6 +50,7 @@ function calculateTip(id){
             break;
         case "twentyFive":
             tip = bill * 0.25;
+            tipPerc = 0.25;
             document.getElementById("five").disabled = false;
             document.getElementById("ten").disabled = false;
             document.getElementById("fifteen").disabled = false;
@@ -54,6 +59,7 @@ function calculateTip(id){
             break;
         case "fifty":
             tip = bill * 0.5;
+            tipPerc = 0.5;
             document.getElementById("five").disabled = false;
             document.getElementById("ten").disabled = false;
             document.getElementById("fifteen").disabled = false;
@@ -85,10 +91,10 @@ function validateInput(id){
 function validateCustomTip(){
     document.getElementById("reset").disabled = false;
     if(!isNaN(document.getElementById("custom").value) && document.getElementById("custom").value > 0){
-        if(bill > 0) tip = bill * (document.getElementById("custom").value / 100.00);
-        if(people > 0){
-            updateTipandTotal();
-        }
+        tipPerc = document.getElementById("custom").value / 100.00;
+        if(bill > 0) tip = bill * tipPerc;
+        document.getElementById("tip").textContent = (tip / people).toFixed(2);
+        document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
         document.getElementById("five").disabled = false;
         document.getElementById("ten").disabled = false;
         document.getElementById("fifteen").disabled = false;
@@ -107,6 +113,9 @@ function validateCustomTip(){
 }
 
 function updateTipandTotal(){
+    if(tip > 0.0){
+        tip = bill * tipPerc;
+    }
     document.getElementById("tip").textContent = (tip / people).toFixed(2);
     document.getElementById("total").textContent = ((bill / people) + (tip / people)).toFixed(2);
 }
